@@ -1,7 +1,7 @@
 services:
   frontend:
-    image: expense_tracker_frontend:0.0.1
+    image: urfist/expense_tracker_frontend:0.0.2
     ports:
      - "80:80"
   backend:
-    image: expense_tracker_backend:0.0.1 
+    image: urfist/expense_tracker_backend:0.0.2
