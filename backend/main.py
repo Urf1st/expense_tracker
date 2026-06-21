@@ -1,3 +1,4 @@
+import os
 import sqlite3
 from contextlib import contextmanager
 from datetime import date
@@ -55,7 +56,7 @@ class SettingUpdate(BaseModel):
 
 # ── Database ───────────────────────────────────────────────────────────────────
 
-DB_PATH = "./expenses.db"
+DB_PATH = os.getenv("DB_PATH", "./expenses.db")
 
 _DEFAULT_CATEGORIES = ["Food", "Transport", "Home", "Health", "Other"]
 
