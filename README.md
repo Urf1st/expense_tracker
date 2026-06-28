@@ -31,6 +31,8 @@ A full-stack expense tracking web application built as a DevOps portfolio projec
 | CI/CD *(planned)* | Jenkins |
 | Orchestration *(planned)* | Kubernetes (Minikube) |
 | GitOps *(planned)* | ArgoCD |
+| Infrastructure as Code *(planned)* | Terraform |
+| Configuration Management *(planned)* | Ansible |
 
 ---
 
@@ -53,6 +55,8 @@ expense-tracker/
 │   ├── package.json
 │   └── vite.config.ts
 ├── k8s/                      # coming soon
+├── terraform/                # coming soon
+├── ansible/                  # coming soon
 ├── docker-compose.yml
 └── README.md
 ```
@@ -96,10 +100,8 @@ Nginx :80          (serves static frontend, proxies /api/*)
 FastAPI :8000      (REST API)
   │
   ▼
-SQLite             (expenses.db — file inside backend container)
+SQLite             (expenses.db — persisted via Docker volume)
 ```
-
-> **Note:** SQLite data is stored inside the container. Mount a volume in production to persist data across restarts.
 
 ---
 
@@ -128,6 +130,8 @@ Interactive docs available at `http://localhost:8000/docs` when the backend is r
 - [ ] Kubernetes manifests (Minikube)
 - [ ] Jenkins CI pipeline (build → push to Docker Hub)
 - [ ] ArgoCD GitOps (auto-deploy on git push)
+- [ ] Terraform (infrastructure provisioning)
+- [ ] Ansible (configuration management)
 - [ ] Prometheus metrics
 - [ ] GitHub Actions
 
